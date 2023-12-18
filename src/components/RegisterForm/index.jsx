@@ -2,9 +2,10 @@
 import axios from 'axios';
 import * as S from './style.jsx'
 import { useState } from 'react';
-
+import { useRouter } from 'next/navigation'
 
 export const RegisterForm = () => {
+    const router = useRouter();
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [ name, setName ] = useState();
@@ -27,12 +28,13 @@ export const RegisterForm = () => {
         event.preventDefault()
         try{
             const response = await axios.post('http://localhost:8080/auth/register', { email, password, name })
+            localStorage.setItem('token', response.data.data.token)
             setNotification({
                 open: true,
                 message: `Usuário ${ email } cadastrado com sucesso!`,
                 severity: 'success'
             });           
-            localStorage.setItem('token', response.data.data.token)
+            router.push('/dashboard');
         }catch(error) {
             setNotification({
                 open: true,

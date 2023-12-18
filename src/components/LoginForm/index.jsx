@@ -2,8 +2,10 @@
 import { useEffect, useState  } from 'react'
 import  axios  from 'axios'
 import * as S from './style.jsx'
+import { useRouter } from 'next/navigation'
 
 export const LoginForm = () => {
+    const router = useRouter();
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [ showPassword, setShowPassword ] = useState(false);
@@ -25,12 +27,13 @@ export const LoginForm = () => {
         try{
             console.log(email, password)
             const response = await axios.post('http://localhost:8080/auth/login', { email, password })
+            localStorage.setItem('token', response.data.data.token)
             setNotification({
                 open: true,
                 message: `Usuário ${ email } autententicado com sucesso!`,
                 severity: 'success'
             });           
-            localStorage.setItem('token', response.data.data.token)
+            router.push('/dashboard');
         }catch(error) {
             console.log(error.response.data.error)
             setNotification({
