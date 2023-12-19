@@ -1,7 +1,7 @@
 'use client';
 import axios from "axios";
 import { useEffect } from "react";
-//import CategoriasCreate from "../../../components/Categorias/CategoriasCreate"
+import CategoriasCreate from "../../../components/Categorias/CategoriasCreate"
 import CategoriasUpdate from "../../../components/Categorias/CategoriasUpdate"
 import MetasCreate from "@/components/Metas/MetasCreate";
 import MetasUpdate from "@/components/Metas/MetasUpdate";
@@ -30,8 +30,9 @@ export const DashboardPage = () => {
         <div>
             <h1>dashboard</h1>
             
+            <CategoriasCreate></CategoriasCreate>
             {/*<CategoriasUpdate categoriaId={ 11 }></CategoriasUpdate>*/}
-            {/*<MetasCreate ></MetasCreate>*/}
+            <MetasCreate ></MetasCreate>
             {/*<MetasUpdate metaId={ 2 }></MetasUpdate> */}
             {/*<TransacoesCreate></TransacoesCreate>*/}
             <TransacoesUpdate transacaoId={1}></TransacoesUpdate>
