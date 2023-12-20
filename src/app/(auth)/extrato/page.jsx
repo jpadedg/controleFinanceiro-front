@@ -4,6 +4,7 @@ import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import CategoriasCreate from '@/components/Categorias/CategoriasCreate';
 import MetasCreate from '@/components/Metas/MetasCreate';
+import TransacoesCreate from '@/components/Transacoes/TransacoesCreate';
 
 
 export const ExtratoPage = () => {
@@ -35,7 +36,7 @@ export const ExtratoPage = () => {
             <div style={{ display: 'flex', gap: '15px' }}>
                 <CategoriasCreate />
                 <MetasCreate />
-
+                <TransacoesCreate />
             </div>
         </>
 

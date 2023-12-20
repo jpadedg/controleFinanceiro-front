@@ -142,7 +142,6 @@ export const MetasCreate = () => {
                                 setDataMeta(dataFormatada);
                             }}/>
                         </LocalizationProvider>
-
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={handleCloseModal}>Cancel</Button>

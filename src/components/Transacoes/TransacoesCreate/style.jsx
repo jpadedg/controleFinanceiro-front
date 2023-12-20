@@ -14,7 +14,8 @@ export const Button = styled(ButtonMUI)`
 `
 
 export const TextField = styled(TextFieldMUI)`
-   background-color: white
+   background-color: white;
+   margin-bottom: 25px;
 `
 
 export const Form = styled.form`
