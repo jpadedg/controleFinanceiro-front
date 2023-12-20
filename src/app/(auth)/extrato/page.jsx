@@ -3,6 +3,7 @@ import Button from '@mui/material/Button'
 import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import CategoriasCreate from '@/components/Categorias/CategoriasCreate';
+import MetasCreate from '@/components/Metas/MetasCreate';
 
 
 export const ExtratoPage = () => {
@@ -33,6 +34,8 @@ export const ExtratoPage = () => {
         <>
             <div style={{ display: 'flex', gap: '15px' }}>
                 <CategoriasCreate />
+                <MetasCreate />
+
             </div>
         </>
 

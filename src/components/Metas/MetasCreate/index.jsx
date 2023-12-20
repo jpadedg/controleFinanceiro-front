@@ -1,9 +1,49 @@
 'use client'
-import { useEffect, useState  } from 'react'
+import { Fragment, forwardRef, useEffect, useState  } from 'react'
 import  axios  from 'axios'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { NumericFormat } from 'react-number-format';
+
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import * as S from './style.jsx'
+import { Button } from '@mui/material';
+import { format, parseISO  } from 'date-fns';
+import { ptBR } from 'date-fns/locale'
+
+const NumericFormatCustom = forwardRef(function NumericFormatCustom(
+    props,
+    ref,
+  ) {
+    const { onChange, ...other } = props;
+  
+    return (
+      <NumericFormat
+        {...other}
+        getInputRef={ref}
+        onValueChange={(values) => {
+          onChange({
+            target: {
+              name: props.name,
+              value: values.value,
+            },
+          });
+        }}
+        thousandSeparator = "."
+        decimalSeparator = ","
+        valueIsNumericString
+        prefix="R$ "
+      />
+    );
+  });
 
 export const MetasCreate = () => {
+    const [ open, setOpen ] = useState(false);
     const [ descricao, setDescricao ] = useState();
     const [ valor, setValor ] = useState();
     const [ dataMeta, setDataMeta ] = useState();
@@ -14,18 +54,22 @@ export const MetasCreate = () => {
         severity: ''
     });
 
+
     const onChangeValue = (e) => {
         const { name, value } = e.target
         if (name === 'descricao') setDescricao(value)
-        if (name === 'valor') setValor(value)
         if (name === 'data') setDataMeta(value)
+        if (name === 'valor') {
+            setValor(value * 100 )
+        }
     }
 
     const onSubmit = async (event) => {
         event.preventDefault()
+        const newData = new Date(dataMeta)
+        console.log(newData);
         try{
             const token = localStorage.getItem('token');
-            console.log(descricao, valor, dataMeta)
             const response = await axios.post('http://localhost:8080/metas/', { descricao, valor, data: dataMeta }, {
                 headers: {
                     Authorization: `Bearer ${ token }`
@@ -58,15 +102,54 @@ export const MetasCreate = () => {
         });
     }
 
+    const handleClickOpenModal = () => {
+        setOpen(true);
+      };
+    
+    const handleCloseModal = () => {
+        setOpen(false);
+    };
+
     return (
         <>
-            <S.Form onSubmit={ onSubmit }>
-                <S.H1>Criar meta</S.H1>
-                <S.TextField type='text' onChange={onChangeValue} placeholder='Nome' name="descricao" label="Descricao" variant="outlined" fullWidth/>
-                <S.TextField type='text' onChange={onChangeValue} placeholder='Valor' name="valor" label="Valor" variant="outlined" fullWidth/>
-                <S.TextField type='text' onChange={onChangeValue} name="data" label="Data" variant="outlined" fullWidth/>
-                <S.Button type='submit' variant="contained" color="success">Entrar</S.Button>
-            </S.Form>
+            <Fragment>
+                <S.Button variant="contained" onClick={handleClickOpenModal}>
+                    Criar Meta
+                </S.Button>
+                <Dialog open={open} onClose={handleCloseModal}>
+                    <DialogTitle>Criar Nova Meta</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText style={{ marginBottom: '15px' }}>
+                            Para adicionar uma nova Meta coloque o nome, o valor e a data.
+                        </DialogContentText>
+                        <S.TextField type='text' onChange={onChangeValue} placeholder='Nome' name="descricao" label="Descricao" variant="outlined" fullWidth/>
+                        
+                        <S.TextField
+                            label="Valor"
+                            onChange={ onChangeValue }
+                            name="valor"
+                            variant="outlined"
+                            id="formatted-numberformat-input"
+                            InputProps={{
+                            inputComponent: NumericFormatCustom,
+                            }}
+                            fullWidth
+                        />
+
+                        <LocalizationProvider dateAdapter={ AdapterDateFns } adapterLocale={ ptBR } >
+                            <DatePicker onChange={(newValue) => {
+                                const dataFormatada = newValue ? format(newValue, 'yyyy-MM-dd') : null;
+                                setDataMeta(dataFormatada);
+                            }}/>
+                        </LocalizationProvider>
+
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleCloseModal}>Cancel</Button>
+                        <Button onClick={onSubmit}>Salvar</Button>
+                    </DialogActions>
+                </Dialog>
+            </Fragment>
             <S.Snackbar open={ notification.open } autoHideDuration={3000} onClose={handleClose}>
                 <S.Alert onClose={ handleClose } variant="filled" severity={ notification.severity } sx={{ width: '100%'}}>
                     { notification.message }
