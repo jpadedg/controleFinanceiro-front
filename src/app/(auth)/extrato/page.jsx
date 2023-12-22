@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from "react";
 import CategoriasCreate from '@/components/Categorias/CategoriasCreate';
 import MetasCreate from '@/components/Metas/MetasCreate';
 import TransacoesCreate from '@/components/Transacoes/TransacoesCreate';
+import TransacoesList from '@/components/Transacoes/TransacoesList';
 
 
 export const ExtratoPage = () => {
@@ -38,6 +39,7 @@ export const ExtratoPage = () => {
                 <MetasCreate />
                 <TransacoesCreate />
             </div>
+            <TransacoesList></TransacoesList>
         </>
 
     )
