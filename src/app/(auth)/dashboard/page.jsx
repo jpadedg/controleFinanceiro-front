@@ -1,12 +1,6 @@
 'use client';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CategoriasCreate from "../../../components/Categorias/CategoriasCreate"
-import CategoriasUpdate from "../../../components/Categorias/CategoriasUpdate"
-import MetasCreate from "@/components/Metas/MetasCreate";
-import MetasUpdate from "@/components/Metas/MetasUpdate";
-import TransacoesCreate from "@/components/Transacoes/TransacoesCreate";
-import TransacoesUpdate from "@/components/Transacoes/TransacoesUpdate";
 import { Chart } from "@/components/Chart";
 import Panel from "@/components/Panel";
 

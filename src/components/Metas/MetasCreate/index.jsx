@@ -79,7 +79,6 @@ export const MetasCreate = () => {
                 message: `Meta ${ descricao } criada com sucesso!`,
                 severity: 'success'
             });           
-            localStorage.setItem('token', response.data.data.token)
         }catch(error) {
             setNotification({
                 open: true,

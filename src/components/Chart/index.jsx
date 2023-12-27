@@ -2,7 +2,6 @@ import { BarChart } from '@mui/x-charts/BarChart'
 import { axisClasses } from '@mui/x-charts';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { headers } from '../../../next.config';
 
 const chartSetting = {
   width: 1000,

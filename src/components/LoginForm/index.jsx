@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState  } from 'react'
+import { useState  } from 'react'
 import  axios  from 'axios'
 import * as S from './style.jsx'
 import { useRouter } from 'next/navigation'

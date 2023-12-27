@@ -7,7 +7,6 @@ import axios from 'axios';
 export const Card = ({ children, label, valor, isMeta, saldoTotal = 0 })  => {
     const [ metas, setMetas ] = useState([])
     const [ meta, setMeta ] = useState(0)
-    const [ metaCalc, setMetaCalc ] = useState(0);
 
     const onChangeValue = (e) => {
         const { name, value } = e.target
@@ -39,7 +38,7 @@ export const Card = ({ children, label, valor, isMeta, saldoTotal = 0 })  => {
             <S.Content  style={{ marginBottom: '15px' }}>
                 <S.Content>{ label }</S.Content>
                 { !isMeta && <S.Content style={{ fontWeight: '600', fontSize: '18px' }}>{ valor }</S.Content> }
-                { isMeta && <S.Content style={{ fontWeight: '600', fontSize: '18px' }}>{ meta ? `${(((meta - saldoTotal)/ meta ) * 100).toFixed(0)}%` : 'RS: 0'  }</S.Content> }
+                { isMeta && <S.Content style={{ fontWeight: '600', fontSize: '18px' }}>{ meta ? `${( ((meta - saldoTotal)/ meta ) * 100).toFixed(0)}%` : 'RS: 0'  }</S.Content> }
             </S.Content> 
 
             { isMeta && 

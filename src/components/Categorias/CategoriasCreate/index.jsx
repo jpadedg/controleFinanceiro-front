@@ -1,5 +1,5 @@
 'use client'
-import { Fragment, useEffect, useState  } from 'react'
+import { Fragment, useState  } from 'react'
 import  axios  from 'axios'
 import * as S from './style.jsx'
 import Dialog from '@mui/material/Dialog';
@@ -38,7 +38,6 @@ export const CategoriasCreate = () => {
                 message: `Categoria ${ name } criada com sucesso!`,
                 severity: 'success'
             });           
-            localStorage.setItem('token', response.data.data.token)
         }catch(error) {
             setNotification({
                 open: true,
