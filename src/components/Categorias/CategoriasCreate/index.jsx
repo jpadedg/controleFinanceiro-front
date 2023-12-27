@@ -40,7 +40,6 @@ export const CategoriasCreate = () => {
             });           
             localStorage.setItem('token', response.data.data.token)
         }catch(error) {
-            console.log(error.response.data.error)
             setNotification({
                 open: true,
                 message: error.response.data.error,

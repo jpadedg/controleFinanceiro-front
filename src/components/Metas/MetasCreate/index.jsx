@@ -67,7 +67,6 @@ export const MetasCreate = () => {
     const onSubmit = async (event) => {
         event.preventDefault()
         const newData = new Date(dataMeta)
-        console.log(newData);
         try{
             const token = localStorage.getItem('token');
             const response = await axios.post('http://localhost:8080/metas/', { descricao, valor, data: dataMeta }, {
@@ -82,7 +81,6 @@ export const MetasCreate = () => {
             });           
             localStorage.setItem('token', response.data.data.token)
         }catch(error) {
-            console.log(error.response)
             setNotification({
                 open: true,
                 message: error.response.data.error,

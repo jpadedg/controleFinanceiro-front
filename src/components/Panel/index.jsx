@@ -39,9 +39,7 @@ export const Panel = () => {
            
             somatorio.total = somatorio.receita - somatorio.despesa;
             setSomatorio(somatorio)
-            } catch(error) {
-                console.log(erro)
-            }
+            } catch(_) {}
         }
       getTransacoes();
     }, [])

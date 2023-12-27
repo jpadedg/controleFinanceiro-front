@@ -32,7 +32,6 @@ export const Chart = () => {
                         Authorization: `Bearer ${ token }`
                     }
             })
-                console.log(response);
                 const todosAnos = response.data.data
                     .map((transacao) => new Date(transacao.data).getFullYear())
                     .filter((ano, index, anos) => anos.indexOf(ano) === index)
@@ -67,9 +66,7 @@ export const Chart = () => {
                     })
                 })
                 setDataSet(dataset)
-            } catch(error) {
-                console.log(erro)
-            }
+            } catch(_) {}
         }
       getTransacoes();
     }, [])

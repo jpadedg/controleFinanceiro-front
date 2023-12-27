@@ -57,7 +57,6 @@ export const CategoriasUpdate = ({ categoriaId }) => {
             });           
             localStorage.setItem('token', response.data.data.token)
         }catch(error) {
-            console.log(error.response.data.error)
             setNotification({
                 open: true,
                 message: error.response.data.error,

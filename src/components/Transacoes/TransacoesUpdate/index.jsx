@@ -36,8 +36,6 @@ export const TransacoesUpdate = ({ transacaoId }) => {
                     }
             })
             setCategorias(response.data.data);
-            console.log(response.data.data)
-
             } catch(error) {
                 setNotification({
                     open: true,
@@ -59,7 +57,6 @@ export const TransacoesUpdate = ({ transacaoId }) => {
                         Authorization: `Bearer ${ token }`
                     }
             })
-            console.log(response.data.data.categoria_id)
             setDescricao(response.data.data.descricao);
             setValor(response.data.data.valor);
             setDataTransacao(response.data.data.data);

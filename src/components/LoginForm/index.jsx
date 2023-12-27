@@ -25,7 +25,6 @@ export const LoginForm = () => {
     const onSubmit = async (event) => {
         event.preventDefault()
         try{
-            console.log(email, password)
             const response = await axios.post('http://localhost:8080/auth/login', { email, password })
             localStorage.setItem('token', response.data.data.token)
             setNotification({
@@ -35,7 +34,6 @@ export const LoginForm = () => {
             });           
             router.push('/dashboard');
         }catch(error) {
-            console.log(error.response.data.error)
             setNotification({
                 open: true,
                 message: error.response.data.error,

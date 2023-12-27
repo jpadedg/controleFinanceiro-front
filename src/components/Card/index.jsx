@@ -13,7 +13,6 @@ export const Card = ({ children, label, valor, isMeta, saldoTotal = 0 })  => {
         const { name, value } = e.target
         if (name === 'meta') {
             setMeta(value);
-            console.log(meta)
         }
     }
 
@@ -27,9 +26,7 @@ export const Card = ({ children, label, valor, isMeta, saldoTotal = 0 })  => {
                     }
             })
             setMetas(response.data.data)
-            } catch(error) {
-                console.log(erro)
-            }
+            } catch(_) {}
         }
         getMetas();
     }, [meta])

@@ -38,9 +38,7 @@ import { ptBR } from 'date-fns/locale'
             setTransacoes(response.data.data);
             setTransacoesTable(response.data.data);
 
-            } catch(error) {
-                console.log('erro')
-            }
+            } catch(_) {}
         }
       getTransacoes();
     }, [])
