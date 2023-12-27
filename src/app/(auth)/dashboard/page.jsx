@@ -1,14 +1,20 @@
 'use client';
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CategoriasCreate from "../../../components/Categorias/CategoriasCreate"
 import CategoriasUpdate from "../../../components/Categorias/CategoriasUpdate"
 import MetasCreate from "@/components/Metas/MetasCreate";
 import MetasUpdate from "@/components/Metas/MetasUpdate";
 import TransacoesCreate from "@/components/Transacoes/TransacoesCreate";
 import TransacoesUpdate from "@/components/Transacoes/TransacoesUpdate";
+import { Chart } from "@/components/Chart";
+import Panel from "@/components/Panel";
 
 export const DashboardPage = () => {
+    const [ user, setUser ] = useState({
+        id: null
+    });
+ 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if(!token){
@@ -19,7 +25,8 @@ export const DashboardPage = () => {
                 'Authorization': `Bearer ${ token }`
             }
         }).then((response) => {
-            console.log(response)
+            setUser(response.data.data)
+            console.log(response.data.data)
         }).catch( error => {
             window.location.href = '/login';
         })
@@ -28,14 +35,11 @@ export const DashboardPage = () => {
 
     return (
         <div>
-            <h1>dashboard</h1>
-            
-            <CategoriasCreate></CategoriasCreate>
-            {/*<CategoriasUpdate categoriaId={ 11 }></CategoriasUpdate>*/}
-            <MetasCreate ></MetasCreate>
-            {/*<MetasUpdate metaId={ 2 }></MetasUpdate> */}
-            {/*<TransacoesCreate></TransacoesCreate>*/}
-            <TransacoesUpdate transacaoId={1}></TransacoesUpdate>
+            <h1>Olá, {user.name} </h1>
+            <Panel/>
+            <div style={{ marginLeft: '80px'}}>
+                <Chart/>
+            </div>
         </div>
     )
 }

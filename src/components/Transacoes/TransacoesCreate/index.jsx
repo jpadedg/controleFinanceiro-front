@@ -105,9 +105,7 @@ export const TransacoesCreate = () => {
                 message: `Transação ${ descricao } criada com sucesso!`,
                 severity: 'success'
             });           
-            localStorage.setItem('token', response.data.data.token)
         }catch(error) {
-            console.log(error.response)
             setNotification({
                 open: true,
                 message: error.response.data.error,
