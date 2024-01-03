@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Titulo ou Arte do Projeto</h1> 
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
+  <img src="https://img.shields.io/static/v1?label=Netlify&message=deploy&color=blue&style=for-the-badge&logo=netlify"/>
+  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=Ruby&message=2.6.3&color=red&style=for-the-badge&logo=ruby"/>
+  <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=6.0.2.2&color=red&style=for-the-badge&logo=ruby"/>
+  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
+</p>
 
-First, run the development server:
+> Status do Projeto: :heavy_check_mark: :warning: (concluido, em desenvolvimento, etc)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Tópicos 
+
+:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
+
+:small_blue_diamond: [Funcionalidades](#funcionalidades)
+
+:small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
+
+:small_blue_diamond: [Pré-requisitos](#pré-requisitos)
+
+:small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+
+... 
+
+Insira os tópicos do README em links para facilitar a navegação do leitor
+
+## Descrição do projeto 
+
+<p align="justify">
+  Descrição breve do projeto compondo um paragrafo ou dois. 
+</p>
+
+## Funcionalidades
+
+:heavy_check_mark: Criação de categorias para gastos ou despesas
+
+:heavy_check_mark: Criação de metas  
+
+:heavy_check_mark: Relatórios por periodos ou por gasto
+
+:heavy_check_mark: Acompanhamento de metas
+
+:heavy_check_mark: Gráfico para análise de dados
+
+## Layout da Aplicação :dash:
+
+Tela de login: ![image](https://github.com/jpadedg/controleFinanceiro-front/assets/57507707/53115c5e-b466-48cb-9a91-d14daa57f096)
+
+Tela de extrato: ![image](https://github.com/jpadedg/controleFinanceiro-front/assets/57507707/aedc4a4f-7b06-4b22-882b-85a6bfb9c581)
+
+Tela do painel: ![image](https://github.com/jpadedg/controleFinanceiro-front/assets/57507707/1a7e57ce-67e6-4077-b86b-8c0abe4fa4e5)
+
+
+## Pré-requisitos
+
+:warning: [Node](https://nodejs.org/en/download/)
+:warning: [Next](https://nextjs.org/docs)
+:warning: [Axios](https://axios-http.com/ptbr/docs/intro)
+:warning: [Date-fns](https://date-fns.org/docs/Getting-Started)
+
+## Como rodar a aplicação :arrow_forward:
+
+No terminal, clone o projeto: 
+
+```
+git clone https://github.com/jpadedg/controleFinanceiro-front.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+... 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+cd controleFinanceiro-front.git
+npm i 
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+... 
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Linguagens, dependencias e libs utilizadas :books:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+- [React PDF](https://react-pdf.org/)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tarefas em aberto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
+
+:memo: Página de categoria
+
+
+## Desenvolvedor
+
+João Pedro Aded - 2023 
