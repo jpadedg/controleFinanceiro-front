@@ -56,8 +56,6 @@ Tela do painel:
 
 :warning: [Node](https://nodejs.org/en/download/)
 
-:warning: [Next]()
-
 :warning: [Axios](https://axios-http.com/ptbr/docs/intro)
 
 :warning: [Date-fns](https://date-fns.org/docs/Getting-Started)
@@ -87,8 +85,6 @@ Link para o projeto backend: https://github.com/jpadedg/controleFinanceiro-back
 
 
 ## Tarefas em aberto
-
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
 
 :memo: Página de categoria
 
