@@ -19,9 +19,6 @@
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
-... 
-
-Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## Descrição do projeto 
 
@@ -58,7 +55,7 @@ Tela do painel:
 
 :warning: [Node](https://nodejs.org/en/download/)
 
-:warning: [Next](https://nextjs.org/docs)
+:warning: [Next]()
 
 :warning: [Axios](https://axios-http.com/ptbr/docs/intro)
 
@@ -81,7 +78,7 @@ npm run dev
 ## Linguagens, dependencias e libs utilizadas :books:
 
 - [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
+- [Next](https://nextjs.org/docs)
 
 
 ## Tarefas em aberto
