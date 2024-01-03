@@ -42,6 +42,7 @@
 ## Layout da Aplicação :dash:
 
 Tela de login: 
+
 ![image](https://github.com/jpadedg/controleFinanceiro-front/assets/57507707/53115c5e-b466-48cb-9a91-d14daa57f096)
 
 Tela de extrato: 
@@ -74,6 +75,10 @@ cd controleFinanceiro-front.git
 npm i 
 npm run dev
 ```
+
+Dessa manaiera acima, o front estará rodando de forma local, para que o projeto funcione corretamente, é necessário que o Back-end esteja rodando de forma local na porta 8080.
+
+Link para o projeto backend: https://github.com/jpadedg/controleFinanceiro-back
 
 ## Linguagens, dependencias e libs utilizadas :books:
 
